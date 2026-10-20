@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kristiyan Vakov · Software Developer</title>
+<meta name="description" content="Kristiyan Vakov, software developer. Full-stack .NET + Angular and applied AI. Selected projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+<a class="skip noprint" href="#projects">Skip to projects</a>
+
+<header class="nav">
+  <nav class="nav-in" aria-label="Primary">
+    <a class="brand" href="#top">Kristiyan Vakov</a>
+    <div class="nav-links noprint">
+      <a href="#projects">Projects</a>
+      <a href="#hackathons">Hackathon Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+      <button type="button" class="theme-btn" id="theme-btn"></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="hero-top">
+      <div class="avatar" id="avatar" role="img" aria-label="Photo of Kristiyan Vakov">
+        <img src="images/profile-image.jpg" alt="Kristiyan Vakov" id="avatar-img">
+      </div>
+      <div class="hero-id">
+        <h1 id="hero-name">Kristiyan Vakov</h1>
+        <p class="role">Software Developer</p>
+        <ul class="focus" aria-label="Focus areas">
+          <li>Full-stack .NET + Angular</li>
+          <li>Applied AI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero-body">
+      <p class="lede">I build full-stack web apps in .NET and Angular, and AI systems that cite their sources and track their own cost.</p>
+      <p class="print-contact">kristian.vakov@gmail.com · github.com/Kris2327</p>
+      <div class="actions noprint">
+        <a class="btn btn-primary" id="open-contact" href="mailto:kristian.vakov@gmail.com" aria-haspopup="dialog">Email me</a>
+        <a class="btn btn-ghost" href="https://github.com/Kris2327" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section" aria-labelledby="projects-h">
+    <div class="section-head">
+      <h2 id="projects-h">Projects</h2>
+      <p>Ordered by complexity, hardest first</p>
+    </div>
+    <div class="projects" id="projects-list"></div>
+  </section>
+
+  <section id="hackathons" class="section" aria-labelledby="hackathons-h">
+    <div class="section-head">
+      <h2 id="hackathons-h">Hackathon Projects</h2>
+      <p>Built under time pressure</p>
+    </div>
+    <div class="projects" id="hackathons-list"></div>
+  </section>
+
+  <section id="awards" class="section" aria-labelledby="awards-h">
+    <div class="section-head">
+      <h2 id="awards-h">Awards &amp; Certificates</h2>
+      <p>Click a document to enlarge it</p>
+    </div>
+    <div class="awards" id="awards-list"></div>
+  </section>
+</main>
+
+<footer id="contact" aria-labelledby="contact-h">
+  <div class="foot-in">
+    <div class="avail"><i aria-hidden="true"></i>Available for work</div>
+    <h2 id="contact-h">Contact</h2>
+    <ul class="contact-links">
+      <li><span class="c-label">Email</span><a href="mailto:kristian.vakov@gmail.com">kristian.vakov@gmail.com</a></li>
+      <li><span class="c-label">GitHub</span><a href="https://github.com/Kris2327" target="_blank" rel="noopener">github.com/Kris2327</a></li>
+    </ul>
+    <p class="copy noprint">© 2026 Kristiyan Vakov</p>
+  </div>
+</footer>
+
+<dialog class="lightbox noprint" id="lightbox" aria-label="Enlarged document"><img src="" alt=""></dialog>
+
+<dialog class="modal noprint" id="contact-dialog" aria-labelledby="modal-h">
+  <form id="contact-form" method="dialog" novalidate>
+    <div class="modal-head">
+      <h2 id="modal-h">Send me a message</h2>
+      <button type="button" class="modal-x" id="contact-close" aria-label="Close">×</button>
+    </div>
+    <p class="modal-sub">Goes straight to my inbox. I'll reply to the address you enter below.</p>
+    <label class="field"><span>Your name</span>
+      <input type="text" name="name" autocomplete="name" required maxlength="100">
+    </label>
+    <label class="field"><span>Your email</span>
+      <input type="email" name="email" autocomplete="email" required maxlength="200">
+    </label>
+    <label class="field"><span>Message</span>
+      <textarea name="message" rows="5" required maxlength="4000"></textarea>
+    </label>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" id="contact-cancel">Cancel</button>
+      <button type="submit" class="btn btn-primary" id="contact-send">Send message</button>
+    </div>
+  </form>
+</dialog>
+
+</body>
+</html>
