@@ -1,4 +1,4 @@
-(function(){try{var t=localStorage.getItem('kv-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','light')}})();
+(function(){try{var t=localStorage.getItem('kv-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-bs-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','light');document.documentElement.setAttribute('data-bs-theme','light')}})();
 
 /* =====================================================================
    PROJECT DATA — edit here. Order = display order (hardest first).
@@ -220,11 +220,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function card(p, i, idPrefix) {
     var done = p.status === "completed";
     var wrap = el("div"); wrap.setAttribute("data-reveal", ""); wrap.id = slug(p.name);
-    var art = el("article", "card" + (i % 2 ? " rev" : ""));
+    var art = el("article", "kcard row align-items-start");
     var hid = (idPrefix || "project") + "-" + (i + 1);
     art.setAttribute("aria-labelledby", hid);
 
-    var media = el("div", "media");
+    var media = el("div", "media col-12 col-lg" + (i % 2 ? " order-lg-2" : ""));
     if (p.image) {
       var img = el("img", "shot"); img.src = p.image; img.alt = "Screenshot of " + p.name; img.loading = "lazy";
       media.appendChild(img);
@@ -234,10 +234,10 @@ document.addEventListener("DOMContentLoaded", function () {
       media.appendChild(ph);
     }
 
-    var body = el("div", "body");
+    var body = el("div", "body col-12 col-lg");
     var meta = el("div", "meta");
     meta.appendChild(el("span", "num", String(i + 1).padStart(2, "0")));
-    var badge = el("span", "badge " + (done ? "done" : "wip"));
+    var badge = el("span", "kbadge " + (done ? "done" : "wip"));
     var dot = el("i"); dot.setAttribute("aria-hidden", "true");
     badge.appendChild(dot); badge.appendChild(document.createTextNode(done ? "Completed" : "In progress"));
     meta.appendChild(badge);
@@ -300,10 +300,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var dark = root.getAttribute("data-theme") === "dark";
     btn.textContent = dark ? "Light" : "Dark";
     btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    var logo = "images/logo-round" + (dark ? "" : "-light") + ".png";
+    document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = logo; });
   }
   btn.addEventListener("click", function () {
     var t = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", t);
+    root.setAttribute("data-bs-theme", t);
     try { localStorage.setItem("kv-theme", t); } catch (e) {}
     syncBtn();
   });
@@ -342,12 +345,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Without <dialog> support the button simply stays a normal mailto: link.
   if (dlg && typeof dlg.showModal === "function") {
-    openBtn.addEventListener("click", function (e) {
+    function openDlg(e) {
       e.preventDefault();
       setStatus("");
       dlg.showModal();
       form.elements.name.focus();
-    });
+    }
+    openBtn.addEventListener("click", openDlg);
     document.getElementById("contact-close").addEventListener("click", function () { dlg.close(); });
     document.getElementById("contact-cancel").addEventListener("click", function () { dlg.close(); });
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });

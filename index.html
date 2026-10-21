@@ -3,26 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="images/logo-round.png" type="image/png">
+<link rel="apple-touch-icon" href="images/logo-round.png">
 <title>Kristiyan Vakov · Software Developer</title>
 <meta name="description" content="Kristiyan Vakov, software developer. Full-stack .NET + Angular and applied AI. Selected projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 <body>
 <a class="skip noprint" href="#projects">Skip to projects</a>
 
-<header class="nav">
-  <nav class="nav-in" aria-label="Primary">
-    <a class="brand" href="#top">Kristiyan Vakov</a>
-    <div class="nav-links noprint">
+<header class="knav">
+  <nav class="navbar navbar-expand-md nav-in" aria-label="Primary">
+    <a class="brand d-inline-flex align-items-center gap-2" href="#top"><img src="images/logo-round.png" alt="" width="32" height="32" class="brand-logo logo-dark"><img src="images/logo-round-light.png" alt="" width="32" height="32" class="brand-logo logo-light">Kristiyan Vakov</a>
+    <button class="navbar-toggler noprint" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-md-end noprint" id="nav-menu">
+     <div class="nav-links d-flex flex-column flex-md-row align-items-md-center">
       <a href="#projects">Projects</a>
       <a href="#hackathons">Hackathon Projects</a>
       <a href="#awards">Awards</a>
       <a href="#contact">Contact</a>
       <button type="button" class="theme-btn" id="theme-btn"></button>
+     </div>
     </div>
   </nav>
 </header>
@@ -44,10 +51,10 @@
     </div>
     <div class="hero-body">
       <p class="lede">I build full-stack web apps in .NET and Angular, and AI systems that cite their sources and track their own cost.</p>
-      <p class="print-contact">kristian.vakov@gmail.com · github.com/Kris2327</p>
+      <p class="print-contact">kristian.vakov@gmail.com · +359 894 957 416 · github.com/kristiyanvakov</p>
       <div class="actions noprint">
-        <a class="btn btn-primary" id="open-contact" href="mailto:kristian.vakov@gmail.com" aria-haspopup="dialog">Email me</a>
-        <a class="btn btn-ghost" href="https://github.com/Kris2327" target="_blank" rel="noopener">GitHub</a>
+        <a class="kbtn kbtn-primary" id="open-contact" href="mailto:kristian.vakov@gmail.com" aria-haspopup="dialog">Email me</a>
+        <a class="kbtn kbtn-ghost" href="https://github.com/kristiyanvakov" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
@@ -79,19 +86,21 @@
 
 <footer id="contact" aria-labelledby="contact-h">
   <div class="foot-in">
+    <h2 id="contact-h" class="foot-eyebrow">Contact</h2>
+    <p class="foot-title">Let&rsquo;s build something<br><em>great together.</em></p>
     <div class="avail"><i aria-hidden="true"></i>Available for work</div>
-    <h2 id="contact-h">Contact</h2>
     <ul class="contact-links">
       <li><span class="c-label">Email</span><a href="mailto:kristian.vakov@gmail.com">kristian.vakov@gmail.com</a></li>
-      <li><span class="c-label">GitHub</span><a href="https://github.com/Kris2327" target="_blank" rel="noopener">github.com/Kris2327</a></li>
+      <li><span class="c-label">Phone</span><a href="tel:+359894957416">+359 894 957 416</a></li>
+      <li><span class="c-label">GitHub</span><a href="https://github.com/kristiyanvakov" target="_blank" rel="noopener">KristiyanVakov</a></li>
     </ul>
-    <p class="copy noprint">© 2026 Kristiyan Vakov</p>
+    <p class="copy noprint">&copy; 2026 Kristiyan Vakov</p>
   </div>
 </footer>
 
 <dialog class="lightbox noprint" id="lightbox" aria-label="Enlarged document"><img src="" alt=""></dialog>
 
-<dialog class="modal noprint" id="contact-dialog" aria-labelledby="modal-h">
+<dialog class="kmodal noprint" id="contact-dialog" aria-labelledby="modal-h">
   <form id="contact-form" method="dialog" novalidate>
     <div class="modal-head">
       <h2 id="modal-h">Send me a message</h2>
@@ -110,8 +119,8 @@
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
     <div class="modal-actions">
-      <button type="button" class="btn btn-ghost" id="contact-cancel">Cancel</button>
-      <button type="submit" class="btn btn-primary" id="contact-send">Send message</button>
+      <button type="button" class="kbtn kbtn-ghost" id="contact-cancel">Cancel</button>
+      <button type="submit" class="kbtn kbtn-primary" id="contact-send">Send message</button>
     </div>
   </form>
 </dialog>
