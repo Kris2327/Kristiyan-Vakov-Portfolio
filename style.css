@@ -211,6 +211,16 @@ button.kbtn-ghost{background:transparent}
 .award-body .links a{min-height:24px;font-size:13.5px}
 .award-media .slide-cap{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);display:block}
 
+/* Experience */
+.exp{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.exp-item{display:grid;grid-template-columns:minmax(180px,240px) minmax(0,1fr);align-items:center;gap:8px clamp(16px,3vw,32px);padding:clamp(16px,2.4vw,22px) clamp(16px,2.6vw,24px);background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.exp-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.exp-date{font:500 13px/1.4 'Geist Mono',ui-monospace,monospace;color:var(--muted)}
+.exp-body{display:grid;gap:4px;min-width:0}
+.exp-body h3{font-size:clamp(18px,2.2vw,22px)}
+@media (max-width:575.98px){.exp-item{grid-template-columns:1fr}}
+@media print{.exp-item{break-inside:avoid;border:none;border-bottom:1px solid #ddd;border-radius:0;padding:0 0 8pt}}
+
 /* Contact section */
 footer{border-top:0}
 .foot-in{gap:0;padding-top:clamp(40px,6vw,72px)}
