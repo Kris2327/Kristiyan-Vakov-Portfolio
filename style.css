@@ -86,7 +86,8 @@ ul.tech li{padding:4px 9px;border:1px solid var(--line);border-radius:6px;font:4
 
 footer{border-top:1px solid var(--line);scroll-margin-top:72px}
 .foot-in{max-width:1080px;margin:0 auto;padding:clamp(56px,9vw,104px) clamp(20px,4vw,40px) 40px;display:grid;gap:20px}
-.avail{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 'Geist Mono',ui-monospace,monospace;color:var(--ok-fg)}
+.avail{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 'Geist Mono',ui-monospace,monospace;color:oklch(0.55 0.2 25)}
+[data-theme="dark"] .avail{color:oklch(0.75 0.15 25)}
 .avail i{width:8px;height:8px;border-radius:50%;background:currentColor}
 footer h2{font-size:clamp(28px,4.5vw,44px);letter-spacing:-0.03em;line-height:1.1}
 .contact-links{list-style:none;padding:0;display:grid;max-width:520px;border-top:1px solid var(--line)}
@@ -213,7 +214,8 @@ button.kbtn-ghost{background:transparent}
 
 /* Experience */
 .exp{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.exp-item{display:grid;grid-template-columns:minmax(180px,240px) minmax(0,1fr);align-items:center;gap:8px clamp(16px,3vw,32px);padding:clamp(16px,2.4vw,22px) clamp(16px,2.6vw,24px);background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.exp-item{display:grid;grid-template-columns:minmax(180px,240px) minmax(0,1fr);align-items:center;gap:8px clamp(16px,3vw,32px);padding:clamp(16px,2.4vw,22px) clamp(16px,2.6vw,24px);background:var(--surface);border:1px solid var(--line);border-radius:14px;transition:border-color .25s ease}
+.exp-item:hover{border-color:var(--line-strong)}
 .exp-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .exp-date{font:500 13px/1.4 'Geist Mono',ui-monospace,monospace;color:var(--muted)}
 .exp-body{display:grid;gap:4px;min-width:0}
