@@ -90,7 +90,7 @@ var PROJECTS = [
       "Expo / React Native client with Expo Router and TanStack Query, with offline caching of events."
     ],
     tech: ["TypeScript", "Expo / React Native", "Expo Router", "TanStack Query", "Fastify", "Supabase", "Google Calendar API", "CalDAV", "Docker"],
-    links: [{ label: "GitHub", url: "https://github.com/Kris2327/Shared-Calendar-App" }],
+    links: [{ label: "GitHub", url: "https://github.com/kristiyanvakov/Shared-Calendar-App" }],
     image: "",
     images: [
       { title: "Calendar", image: "images/sharedcalendar-calendar.webp", alt: "Shared Calendar app showing the month view and an empty day" },
