@@ -22,7 +22,12 @@ var PROJECTS = [
     ],
     tech: ["Python", "Flet", "Supabase", "OpenAI API", "Gmail and Google Calendar APIs", "Selenium"],
     links: [],
-    image: ""
+    image: "",
+    images: [
+      { title: "Desktop", image: "images/aria-desktop.webp", alt: "ARIA desktop app with the central core and six cards: Mail, School, Time, Encorp projects, Fitness and Mentor" },
+      { title: "Mobile home", image: "images/aria-mobile-home.webp", alt: "ARIA mobile app home screen with the six modules arranged around the core" },
+      { title: "Mobile assistant", image: "images/aria-mobile-assistant.webp", alt: "ARIA mobile assistant chat in direct mode" }
+    ]
   },
   {
     name: "TeamUp",
@@ -40,10 +45,14 @@ var PROJECTS = [
     ],
     tech: [".NET 10", "ASP.NET Core", "EF Core", "PostgreSQL", "SignalR", "Angular 21", "TypeScript", "Docker"],
     links: [{ label: "Website", url: "https://teamup-dpc4.onrender.com/" }],
-    image: ""
+    image: "",
+    images: [
+      { title: "Task board", image: "images/teamup-tasks.webp", alt: "TeamUp task board with To Do, In Progress, Done and Overdue columns" },
+      { title: "Real-time chat", image: "images/teamup-chat.webp", alt: "TeamUp workspace chat with channels and live messages" }
+    ]
   },
   {
-    name: "MemoryAtelier",
+    name: "Memory Atelier",
     tagline: "E-commerce web shop",
     status: "completed",
     statusNote: "",
@@ -58,7 +67,13 @@ var PROJECTS = [
     ],
     tech: [".NET", "ASP.NET Core", "EF Core", "PostgreSQL", "Angular 21", "TypeScript", "Supabase"],
     links: [{ label: "Website", url: "https://memoryatelier.bg/" }],
-    image: ""
+    image: "",
+    imageRatio: "2 / 1",
+    images: [
+      { title: "Shop home page", image: "images/memoryatelier-shop.webp", alt: "Memory Atelier shop home page with category navigation, search and a product collection" },
+      { title: "Shopping cart", image: "images/memoryatelier-cart.webp", alt: "Memory Atelier shopping cart with order summary" },
+      { title: "Welcome screen", image: "images/memoryatelier-intro.webp", alt: "Memory Atelier welcome screen with the brand quote" }
+    ]
   },
   {
     name: "Shared Calendar",
@@ -76,11 +91,34 @@ var PROJECTS = [
     ],
     tech: ["TypeScript", "Expo / React Native", "Expo Router", "TanStack Query", "Fastify", "Supabase", "Google Calendar API", "CalDAV", "Docker"],
     links: [{ label: "GitHub", url: "https://github.com/Kris2327/Shared-Calendar-App" }],
-    image: ""
+    image: "",
+    images: [
+      { title: "Calendar", image: "images/sharedcalendar-calendar.webp", alt: "Shared Calendar app showing the month view and an empty day" },
+      { title: "New event", image: "images/sharedcalendar-new-event.webp", alt: "Shared Calendar app new event form with title, time and colour" }
+    ]
   }
 ];
 /* Hackathon entries (separate section). Same fields as above. */
 var HACKATHONS = [
+  {
+    name: "ABC Arena Agent",
+    tagline: "Reinforcement-learning agent for a multi-agent retail simulation",
+    status: "completed",
+    statusNote: "Голямото Schwarz междучасие 3 · 3rd place · theme “The Rise of AI”",
+    complexity: 5,
+    level: "Advanced",
+    reason: "Reinforcement learning, imitation learning and controlled experiments in a competitive multi-agent game.",
+    description: "Trained and evaluated agents for a 6-player retail-chain simulation (1,000 rounds per match, 318-dimensional observation, 44-dimensional action space), competing against my teammates' agents.",
+    highlights: [
+      "Found why my agent lost: its fixed opening collided with rivals' openings and led to a cash-flow spiral. Counterfactual replays confirmed it, and it explained roughly 85% of the losses in bad matches.",
+      "Designed a rule-based expert strategy (smooth region scoring, rival-aware expansion, adaptive wage rule). In my own tests it earned about 299k on the competition lineup against 225k for my best trained agent.",
+      "Tried to distil the expert into neural agents with DAgger (about 2.2M synthetic labelled states) and anchored PPO/A2C fine-tuning, compared over 12 matches per cell, 6 home rotations and 2 seeds. It did not beat the baselines, so I reported the negative result instead of shipping an unproven agent.",
+      "Delivered a fine-tuned agent (a teammate's v7 plus 10k anchored A2C steps) that matched the strongest baseline and clearly beat my previous entry. Numbers come from small local tests, so treat them as indicative."
+    ],
+    tech: ["Python", "Stable-Baselines3 (A2C, PPO, SAC, TQC)", "Gymnasium", "Behaviour cloning / DAgger", "PowerShell", "Git"],
+    links: [],
+    image: ""
+  },
   {
     name: "Asta",
     tagline: "Cost-routed, self-verifying Q&A agent",
@@ -106,6 +144,15 @@ var HACKATHONS = [
    items[].url: external link to a credential, e.g. a verification page (optional). */
 var AWARDS = [
   {
+    event: "Голямото Schwarz междучасие 3 hackathon",
+    date: "28–30 October 2026",
+    result: "3rd place",
+    project: "ABC Arena Agent",
+    items: [
+      { kind: "Certificate", title: "3rd place finalist certificate", image: "images/SchwartzDigitsHackathon-certificate.jpg", alt: "3rd place finalist certificate from Голямото Schwarz междучасие 3 “The Rise of AI”, Sofia, 28–30 October 2026" }
+    ]
+  },
+  {
     event: "Atanasoff__48 hackathon",
     date: "4 October 2026",
     result: "2nd place",
@@ -113,6 +160,14 @@ var AWARDS = [
     items: [
       { kind: "Diploma", title: "2nd place diploma", image: "images/hackathon-diploma.jpg", alt: "Diploma for 2nd place in Atanasoff__48, 4 October 2026" },
       { kind: "Certificate", title: "Certificate of participation", image: "images/hackathon-certificate.jpg", alt: "Certificate of participation in Atanasoff__48, 4 October 2026" }
+    ]
+  },
+  {
+    event: "ACS Ignite hackathon",
+    date: "20–21 February 2026",
+    result: "3rd place",
+    items: [
+      { kind: "Certificate", title: "Certificate of participation", image: "images/IgniteHackathon-certificate.jpg", alt: "Certificate for excellent performance in the ACS Ignite Hackathon, American College of Sofia, 20–21 February 2026" }
     ]
   }
 ];
@@ -138,12 +193,13 @@ document.addEventListener("DOMContentLoaded", function () {
     lb.showModal();
   }
 
-  function slideshow(items, label) {
-    var root = el("div", "slides");
+  function slideshow(items, label, cls, ratio) {
+    var root = el("div", "slides" + (cls ? " " + cls : ""));
     root.setAttribute("role", "group");
     root.setAttribute("aria-roledescription", "carousel");
     root.setAttribute("aria-label", label);
     var view = el("div", "slides-view");
+    if (ratio) view.style.aspectRatio = ratio;
     var figs = items.map(function (it, k) {
       var fig = el("figure", "slide" + (k === 0 ? " on" : ""));
       fig.setAttribute("aria-hidden", k === 0 ? "false" : "true");
@@ -165,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var thumbEls = items.map(function (it, k) {
       var d = el("button", "slide-thumb" + (k === 0 ? " on" : "")); d.type = "button";
       var ti = el("img"); ti.src = it.image; ti.alt = ""; d.appendChild(ti);
+      if (ratio) d.style.aspectRatio = ratio;
       d.setAttribute("aria-label", "Show " + (it.title || "document " + (k + 1)));
       d.addEventListener("click", function () { show(k); start(); });
       thumbs.appendChild(d); return d;
@@ -224,11 +281,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var hid = (idPrefix || "project") + "-" + (i + 1);
     art.setAttribute("aria-labelledby", hid);
 
+    var noMedia = !(p.images && p.images.length) && !p.image && idPrefix === "hackathon";
+    if (noMedia) art.classList.add("solo");
     var media = el("div", "media col-12 col-lg" + (i % 2 ? " order-lg-2" : ""));
-    if (p.image) {
+    if (p.images && p.images.length) {
+      media.appendChild(slideshow(p.images, "Screenshots of " + p.name, "wide", p.imageRatio));
+    } else if (p.image) {
       var img = el("img", "shot"); img.src = p.image; img.alt = "Screenshot of " + p.name; img.loading = "lazy";
       media.appendChild(img);
-    } else {
+    } else if (!noMedia) {
       var ph = el("div", "shot-ph", "Screenshot · 16:10");
       ph.setAttribute("role", "img"); ph.setAttribute("aria-label", "Screenshot of " + p.name);
       media.appendChild(ph);
@@ -267,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var tech = el("ul", "tech"); tech.setAttribute("aria-label", "Technologies");
     p.tech.forEach(function (t) { tech.appendChild(el("li", null, t)); });
-    media.appendChild(tech);
+    (noMedia ? body : media).appendChild(tech);
 
     if (p.links.length) {
       var links = el("div", "links");
@@ -279,7 +340,8 @@ document.addEventListener("DOMContentLoaded", function () {
       body.appendChild(links);
     }
 
-    art.appendChild(media); art.appendChild(body);
+    if (!noMedia) art.appendChild(media);
+    art.appendChild(body);
     wrap.appendChild(art);
     return wrap;
   }
