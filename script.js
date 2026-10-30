@@ -13,9 +13,10 @@ var PROJECTS = [
     statusNote: "",
     complexity: 5,
     level: "Advanced",
-    reason: "Desktop app with live integrations, LLM cost optimisation and voice.",
-    description: "A personal desktop assistant with an animated central “core” and six cards radiating from it: Mail, School, Time, Projects, Fitness and Mentor. It reads Gmail and Google Calendar, tracks homework, and acts as a direct, serious mentor you can talk to by voice.",
+    reason: "Desktop and mobile apps with live integrations, LLM cost optimisation and voice.",
+    description: "A personal assistant for desktop and mobile with an animated central “core” and six modules around it: Mail, School, Time, Projects, Fitness and an assistant. It reads Gmail and Google Calendar, tracks homework, and acts as a direct, serious mentor you can talk to by voice.",
     highlights: [
+      "Two clients, one assistant: the desktop app shows all six cards at once, while the mobile version arranges the modules around the core and opens a chat with quick-reply suggestions.",
       "Token-optimised AI: exact-match cache, heuristic router that picks the cheapest model tier, and function-calling tools so only the needed data goes into the prompt.",
       "Background pollers sync Gmail and school data into Supabase; the UI only reads the cache, never blocks on external APIs.",
       "Push-to-talk voice (speech-to-text and text-to-speech) and a planned smart-glasses client."
@@ -120,7 +121,7 @@ var HACKATHONS = [
     image: ""
   },
   {
-    name: "Asta",
+    name: "BDN-Agent",
     tagline: "Cost-routed, self-verifying Q&A agent",
     status: "completed",
     statusNote: "Atanasoff__48 · 2nd place · theme “Energy around us”",
@@ -156,14 +157,13 @@ var AWARDS = [
     event: "Atanasoff__48 hackathon",
     date: "4 October 2026",
     result: "2nd place",
-    project: "Asta",
     items: [
       { kind: "Diploma", title: "2nd place diploma", image: "images/hackathon-diploma.jpg", alt: "Diploma for 2nd place in Atanasoff__48, 4 October 2026" },
       { kind: "Certificate", title: "Certificate of participation", image: "images/hackathon-certificate.jpg", alt: "Certificate of participation in Atanasoff__48, 4 October 2026" }
     ]
   },
   {
-    event: "ACS Ignite hackathon",
+    event: "ACS Ignite hackathon · 24-hour game jam",
     date: "20–21 February 2026",
     result: "3rd place",
     items: [
